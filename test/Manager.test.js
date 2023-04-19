@@ -17,7 +17,7 @@ describe('Manager', () => {
             const getOfficeNumber = '123';
             const manager = new Manager('Jane Doe', '12345', 'email@email.com', getOfficeNumber);
 
-            expect(intern.getOfficeNumber()).toBe(getOfficeNumber);
+            expect(manager.getOfficeNumber()).toBe(getOfficeNumber);
         });
     });
     describe('Initialize getRole()', () => {
