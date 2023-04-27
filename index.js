@@ -34,7 +34,7 @@ const mainQs = {
           message: 'What is your role?',
           choices: ['Engineer', 'Intern', 'Manager', 'Exit'],
       }],
-        engineer = [
+        engineer : [
           {
               type: 'input',
               name: 'github',
@@ -47,7 +47,7 @@ const mainQs = {
               choices: ['true', 'false'],
           }
       ],
-      intern = [
+      intern : [
         {
             type: 'input',
             name: 'school',
@@ -60,7 +60,7 @@ const mainQs = {
             choices: ['true', 'false'],
         }
     ],
-    manager = [
+    manager : [
         {
             type: 'input',
             name: 'officeNumber',
@@ -79,6 +79,7 @@ const mainQs = {
     inquirer.prompt(questions).then( response => {
   if (response.role === "Engineer") {
    //all of the code to make it work depending in the role
+   
   }
   if (response.role === "Intern") {
    //all of the code to make it work depending in the role
