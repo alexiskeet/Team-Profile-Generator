@@ -92,7 +92,7 @@ function prompt(questions, prevResponse) {
         }
          else if (response.quit === "true") {
             //here you write the file and return;
-            writeFile('employee.html', template(prevResponse))
+            writeFile('employee.html', template(prevResponse, response))
         } else {
             prompt(questions) // starts the questionnaire from the begging to add another employee. 
         }
