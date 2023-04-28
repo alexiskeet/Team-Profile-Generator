@@ -1,6 +1,15 @@
 // this is where code for employee templates will be passed through
 
-function employeeTemplate(data) {
+function employeeTemplate(data1, data2) {
+  if (data2.officeNumber) {
+    var newData2 = data2.officeNumber;
+  }; 
+  if (data2.github) {
+    var newData2 = data2.github;
+  }; 
+  if (data2.school) {
+    var newData2 = data2.school;
+  };
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -12,13 +21,13 @@ function employeeTemplate(data) {
     <body>
         <div class="card" style="width: 18rem;">
         <div class="card-body">
-        <h5 class="card-title">${data.name}</h5>
-        <p class="card-text">${data.role}</p>
+        <h5 class="card-title">${data1.name}</h5>
+        <p class="card-text">${data1.role}</p>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">${data.id}</li>
-        <li class="list-group-item">${data.email}</li>
-        <li class="list-group-item">${data.officeNumber} ${data.github} ${data.school}</li>
+        <li class="list-group-item">${data1.id}</li>
+        <li class="list-group-item">${data1.email}</li>
+        <li class="list-group-item">${newData2}</li>
         </ul>
         <div class="card-body">
         </div>

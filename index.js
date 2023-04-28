@@ -76,23 +76,23 @@ const mainQs = {
 }
 
 
-function prompt(questions) {
+function prompt(questions, prevResponse) {
     inquirer.prompt(questions).then(response => {
         if (response.role === "Engineer") {
             //all of the code to make it work depending in the role
-            prompt(mainQs["engineer"])
+            prompt(mainQs["engineer"], response)
         }
-        if (response.role === "Intern") {
+         else if (response.role === "Intern") {
             //all of the code to make it work depending in the role
             prompt(mainQs["intern"]);
         }
-        if (response.role === "Manager") {
+        else if (response.role === "Manager") {
             //all of the code to make it work depending in the role
             prompt(mainQs["manager"]);
         }
-        if (response.quit === "true") {
+         else if (response.quit === "true") {
             //here you write the file and return;
-            writeFile('employeeHtml.md', template(responses))
+            writeFile('employee.html', template(prevResponse))
         } else {
             prompt(questions) // starts the questionnaire from the begging to add another employee. 
         }
@@ -100,7 +100,7 @@ function prompt(questions) {
 };
 
 function main() {
-    prompt(mainQs["initial"]);
+    prompt(mainQs["initial"], {});
 };
 
 main();
